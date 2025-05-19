@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prompt Page</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='styles/prompt-styles.css')}}"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Tracefy</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('dashboard') }}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#sidebarOffcanvas"
+              >
+                Previous Prompts</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Help</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Logout</a>
+            </li>
+            <li class="nav-item">
+              <div>
+                <img
+                  src="../static/images/logo-clear.png"
+                  alt="lol"
+                  style="height: 40px; width: 40px"
+                />
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- <div class="prompt-section">
+        
+    </div> -->
+
+    <form
+      action="{{ url_for('save_prompt') }}"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <div class="page-wrapper">
+        <div class="container-alimurad">
+          <!-- Left Section -->
+          <div class="left-section">
+            <div class="upload-section">
+              <h3>Upload Image</h3>
+              <br />
+              <input
+                type="file"
+                name="imageUpload"
+                accept="image/*"
+                onchange="previewImage(event)"
+              />
+              <div class="image-preview">
+                <img
+                  id="previewImg"
+                  src=""
+                  alt="Selected Image"
+                  style="
+                    display: none;
+                    max-width: 100%;
+                    height: auto;
+                    margin-top: 10px;
+                  "
+                />
+              </div>
+            </div>
+          </div>
+          <div class="main-section">
+            <h1 class="main-heading">Enter Your Prompt</h1>
+            <textarea
+              name="promptText"
+              placeholder="A middle aged woman with wavy brown hair, fair skin tone and, almond shaped brown eyes, she has round shaped jaw and medium sized natural tone lips..."
+              class="prompt-input"
+            ></textarea>
+            <button
+            class="enter-btn" type="submit"
+            >
+              Enter
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Section -->
+    </form>
+
+    <script>
+      function previewImage(event) {
+        var reader = new FileReader();
+        reader.onload = function () {
+          var imgElement = document.getElementById("previewImg");
+          imgElement.src = reader.result;
+          imgElement.style.display = "block";
+        };
+        reader.readAsDataURL(event.target.files[0]);
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <div
+      class="offcanvas offcanvas-start text-bg-dark"
+      tabindex="-1"
+      id="sidebarOffcanvas"
+      aria-labelledby="sidebarLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="sidebarLabel">Previous Prompts</h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="list-unstyled">
+          <li><div class="prev-prompt"></div></li>
+          <li>Prompt 1: Lorem ipsum dolor sit amet</li>
+          <li>Prompt 2: Consectetur adipiscing elit</li>
+          <li>Prompt 3: Sed do eiusmod tempor</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

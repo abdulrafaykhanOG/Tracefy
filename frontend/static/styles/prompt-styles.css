@@ -1,0 +1,166 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    height: 100vh;
+    overflow-y: hidden;
+
+}
+
+.upload-section {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.upload-heading {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.image-preview img {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    max-width: 100%;
+}
+
+/* Container for both sections */
+.container-alimurad{
+    display: flex;
+    width: 80%; 
+    height: 80%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    /* padding-top: 10p; */
+    
+    
+    /* padding-top: 120px; */
+}
+
+.page-wrapper {
+    /* padding-top: 10px; adjust for navbar height */
+    display: flex;
+    justify-content:center ;
+    /* align-items: center; */
+    background-color: black;
+    height: 100vh;
+    padding-top: 30px;
+
+}
+
+.navbar {
+    width: 100%;
+    background-color: #222;
+    color: white;
+    /* padding: 10px ; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+/* Custom vertical center position for sidebar */
+/* .custom-sidebar {
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    height: auto !important;
+    max-height: 80%; /* optional to restrict vertical space */
+    /* border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  } */
+   /* */ 
+
+
+/* Left Section Styling */
+.left-section {
+    width: 30%;
+    background-color: #3a3f58;
+    color: #fff;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.left-heading {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.previous-prompts {
+    list-style: none;
+}
+
+.previous-prompts li {
+    margin: 10px 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Main Section Styling */
+.main-section {
+    width: 70%;
+    padding: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main-heading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.prompt-input {
+    width: 100%;
+    height: 150px;
+    padding: 15px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    margin-bottom: 20px;
+}
+
+.prompt-input:focus {
+    outline: none;
+    border-color: #3a8dff;
+}
+
+.enter-btn {
+    padding: 10px 20px;
+    background-color: #3a8dff;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.enter-btn:hover {
+    background-color: #2968b5;
+}

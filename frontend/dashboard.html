@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Phase</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='styles/dashboard_styles.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+
+
+</head>
+<body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Tracefy</a>
+              <span class="position-absolute top-50 start-50 translate-middle text-white fw-bold fs-5">Face Phase</span>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('dashboard') }}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas"> Previous Prompts</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Help</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Logout</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+
+
+
+
+
+        <!-- Button to Open the Sidebar -->
+<!-- <button class="btn btn-dark offcanvas-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+    Attributes
+</button> -->
+
+<!-- Offcanvas Sidebar -->
+<!-- <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Additional Attributes</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="attributes-container">
+            <div class="attribute-item">
+                <span>Gender</span>
+                <input type="text" placeholder="Value">
+            </div>
+            <div class="attribute-item">
+                <span>Hair Style</span>
+                <input type="text" placeholder="Value">
+            </div>
+            <div class="attribute-item">
+                <span>Hair Type</span>
+                <input type="text" placeholder="Value">
+            </div>
+            <div class="attribute-item">
+                <span>Skin Colour</span>
+                <input type="text" placeholder="Value">
+            </div>
+            <div class="attribute-item">
+                <span>Skin Type</span>
+                <input type="text" placeholder="Value">
+            </div>
+            <div class="attribute-item">
+                <span>Face Shape</span>
+                <input type="text" placeholder="Value">
+            </div>
+            <div class="attribute-item">
+                <span>Cheek Tilt</span>
+                <input type="text" placeholder="Value">
+            </div>
+            <div class="attribute-item">
+                <span>Facial Hair</span>
+                <input type="text" placeholder="Value">
+            </div>
+            <div class="attribute-item">
+                <span>Nose Shape</span>
+                <input type="text" placeholder="Value">
+            </div>
+            </div>
+
+    </div>
+</div> -->
+
+    
+    <div class="container">
+        <!-- Sketches Section -->
+        <div class="sketch-section">
+            <table>
+            <tr>
+            <td>
+                <div class="card bg-dark text-white m-3" style="width: 200px; ">
+                    <img src="{{ url_for('static', filename='images/lol.webp') }}" style="height: 200px;"   class="card-img-top" alt="Sketch" id="image1">
+                    <div class="card-body text-center">
+                        <a href="{{ url_for('static', filename='images/lol.webp') }}" download class="btn btn-outline-light btn-sm">
+                            &#8681; <!-- Download Icon -->
+                        </a>
+                        <button class="btn btn-outline-light btn-sm" onclick="openFullscreen('image1')">
+                            &#x26F6; <!-- Fullscreen Icon -->
+                        </button>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="card bg-dark text-white m-3" style="width: 200px;">
+                    <img src="{{ url_for('static', filename='images/Picture1.png') }}" style="height: 200px;" class="card-img-top" alt="Sketch" id="image2">
+                    <div class="card-body text-center">
+                        <a href="{{ url_for('static', filename='images/Picture1.png') }}" download class="btn btn-outline-light btn-sm">
+                            &#8681; <!-- Download Icon -->
+                        </a>
+                        <button class="btn btn-outline-light btn-sm" onclick="openFullscreen('image2')">
+                            &#x26F6; <!-- Fullscreen Icon -->
+                        </button>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="card bg-dark text-white m-3" style="width: 200px;">
+                    <img src="{{ url_for('static', filename='images/boop.jpg') }}" style="height: 200px;" class="card-img-top" alt="Sketch" id="image3">
+                    <div class="card-body text-center">
+                       <a href="{{ url_for('static', filename='images/boop.jpg') }}" download class="btn btn-outline-light btn-sm">
+                            &#8681; <!-- Download Icon -->
+                        </a>
+                        <button class="btn btn-outline-light btn-sm" onclick="openFullscreen('image3')">
+                            &#x26F6; <!-- Fullscreen Icon -->
+                        </button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="card bg-dark text-white m-3" style="width: 200px;">
+                    <img src="{{ url_for('static', filename='images/lol.webp') }}" style="height: 200px;" class="card-img-top" alt="Sketch" id="image4">
+                    <div class="card-body text-center">
+                        <a href="{{ url_for('static', filename='images/lol.webp') }}" download class="btn btn-outline-light btn-sm">
+                            &#8681; <!-- Download Icon -->
+                        </a>
+                        <button class="btn btn-outline-light btn-sm" onclick="openFullscreen('image4')">
+                            &#x26F6; <!-- Fullscreen Icon -->
+                        </button>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="card bg-dark text-white m-3" style="width: 200px;">
+                    <img src="{{ url_for('static', filename='images/hello.jpg') }}"style="height: 200px;"  class="card-img-top" alt="Sketch" id="image5">
+                    <div class="card-body text-center">
+                       <a href="{{ url_for('static', filename='images/hello.jpg') }}" download class="btn btn-outline-light btn-sm">
+                            &#8681; <!-- Download Icon -->
+                        </a>
+                        <button class="btn btn-outline-light btn-sm" onclick="openFullscreen('image5')">
+                            &#x26F6; <!-- Fullscreen Icon -->
+                        </button>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="card bg-dark text-white m-3" style="width: 200px;">
+                    <img src="{{ url_for('static', filename='images/Picture1.png') }}" class="card-img-top" alt="Sketch" id="image6">
+                    <div class="card-body text-center">
+                        <a href="{{ url_for('static', filename='images/Picture1.png') }}" download class="btn btn-outline-light btn-sm">
+                            &#8681; <!-- Download Icon -->
+                        </a>    
+                        <button class="btn btn-outline-light btn-sm" onclick="openFullscreen('image6')">
+                            &#x26F6; <!-- Fullscreen Icon -->
+                        </button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+            </table>
+            <!-- <div class="sketches">
+                <img class="sketch-img" src="placeholder.png" alt="Sketch 1">
+                <img class="sketch-img" src="placeholder.png" alt="Sketch 1 ">
+                <img class="sketch-img" src="placeholder.png" alt="Sketch 1">
+                <img class="sketch-img" src="placeholder.png" alt="Sketch 1">
+                <img class="sketch-img" src="placeholder.png" alt="Sketch 1">
+                <img class="sketch-img" src="placeholder.png" alt="Sketch 1">
+            </div> -->
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function openFullscreen(imageId) {
+            var elem = document.getElementById(imageId);
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) { // Firefox
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { // IE/Edge
+                elem.msRequestFullscreen();
+            }
+        }
+    </script>
+
+
+</body>
+</html>
