@@ -1,0 +1,9 @@
+flask
+flask-cors
+pillow
+numpy
+opencv-python
+torch
+diffusers
+controlnet-aux
+huggingface-hub
