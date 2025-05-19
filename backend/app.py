@@ -91,7 +91,7 @@ def prompt():
 def save_prompt():
     img = request.files.get('imageUpload')
     prompt_text = request.form.get('promptText')
-    model_type = request.form.get('modelType', 'flux')  # Default to 'flux'
+    model_type = request.form.get('modelType', 'pix2pix + flux')  # Default to 'flux'
 
     image_pil = Image.open(img.stream).convert('RGB')
 
@@ -143,7 +143,7 @@ def save_prompt():
 
         # Only pass output.png to dashboard.html
         return render_template("dashboard.html", 
-                              result_image_url="static/output.png")
+                                result_image_url="static/output.png")
     else:
         return jsonify({"error": "Failed to generate image"}), 500
 
