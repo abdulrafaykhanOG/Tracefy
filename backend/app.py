@@ -52,9 +52,9 @@ UPLOAD_FOLDER = 'static'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
-# COLAB_BACKEND_URL = "https://e629-34-142-198-91.ngrok-free.app/generate"
-COLAB_BACKEND_URL = "https://0754-35-237-61-68.ngrok-free.app/generate"
-# COLAB_BACKEND_URL = "https://eojwzooypjf31k5.m.pipedream.net"
+
+REMOTE_BACKEND_URL = "https://0754-35-237-61-68.ngrok-free.app/generate"
+
 
 
 # Home route
@@ -91,45 +91,46 @@ def prompt():
 def save_prompt():
     img = request.files.get('imageUpload')
     prompt_text = request.form.get('promptText')
+    model_type = request.form.get('modelType', 'flux')  # Default to 'flux'
 
     image_pil = Image.open(img.stream).convert('RGB')
 
-    sketch = img_to_sketch(image_pil)
-    # sketch.show()
-    # show_fullscreen(sketch)
-    buffer = BytesIO()
-    sketch.save(buffer, format='PNG')
-    buffer.seek(0)
-    # sketch.show()
+    if model_type == 'pix2pix + flux':
+        # Use pix2pix model to generate a sketch
+        sketch = img_to_sketch(image_pil)
+        buffer = BytesIO()
+        sketch.save(buffer, format='PNG')
+        buffer.seek(0)
+        control_image = buffer
+    else:
+        # Use the original image as the control image for flux
+        buffer = BytesIO()
+        image_pil.save(buffer, format='PNG')
+        buffer.seek(0)
+        control_image = buffer
 
     payload = {
         "prompt": prompt_text,
         "controlStrength": 0.7,  # Example value, adjust as needed
-        "controlGuidanceEnd" : 0.4,  # Example value, adjust as needed
-        "seed": 68,  # Example value, adjust as needed
+        "controlGuidanceEnd": 0.4,  # Example value, adjust as needed
+        "seed": 42,  # Example value, adjust as needed
         "randomizeSeed": "true"
     }
     files = {
-        "controlImage": ("controlImage.png", buffer, "image/png")
+        "controlImage": ("controlImage.png", control_image, "image/png")
     }
-    
-    # response = requests.post(COLAB_BACKEND_URL, data=payload, files=files)
 
+    # Send request to the remote app.py backend
+    response = requests.post(REMOTE_BACKEND_URL, data=payload, files=files)
 
-    # output_image = Image.open(BytesIO(response.content))
-    # output_image_path = os.path.join(app.config['UPLOAD_FOLDER'], "output.png")
-    # output_image.show()
-    # output_image.save(output_image_path)
-    # time.sleep(2)
-
-    return render_template("dashboard.html")
-
-    # else:
-    #     return jsonify({"error": "Failed to generate image"}), 500
-    
-
-    # return redirect(url_for('dashboard'))
-
+    if response.status_code == 200:
+        # Process the response and save the generated image
+        output_image = Image.open(BytesIO(response.content))
+        output_image_path = os.path.join(app.config['UPLOAD_FOLDER'], "output.png")
+        output_image.save(output_image_path)
+        return render_template("dashboard.html")
+    else:
+        return jsonify({"error": "Failed to generate image"}), 500
 
 # Dashboard route (protected)
 @app.route('/dashboard')
