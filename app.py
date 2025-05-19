@@ -117,7 +117,6 @@ def infer():
     files = request.files
 
     prompt = data.get("prompt", "best quality")
-    model = data.get("model", "flux-controlnet")
     control_strength = float(data.get("controlStrength", 0.7))
     control_guidance_end = float(data.get("controlGuidanceEnd", 0.8))
     seed = int(data.get("seed", 42))
