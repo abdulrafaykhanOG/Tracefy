@@ -124,11 +124,26 @@ def save_prompt():
     response = requests.post(REMOTE_BACKEND_URL, data=payload, files=files)
 
     if response.status_code == 200:
-        # Process the response and save the generated image
-        output_image = Image.open(BytesIO(response.content))
-        output_image_path = os.path.join(app.config['UPLOAD_FOLDER'], "output.png")
-        output_image.save(output_image_path)
-        return render_template("dashboard.html")
+        # Parse the JSON response with two images
+        json_data = response.json()
+        result_image_data = json_data.get("result_image")
+        control_image_data = json_data.get("control_image")
+
+        # Decode and save result image
+        result_image_bytes = result_image_data.encode("latin1")
+        result_image = Image.open(BytesIO(result_image_bytes))
+        result_image_path = os.path.join(app.config['UPLOAD_FOLDER'], "output.png")
+        result_image.save(result_image_path)
+
+        # Decode and save control image
+        control_image_bytes = control_image_data.encode("latin1")
+        control_image = Image.open(BytesIO(control_image_bytes))
+        control_image_path = os.path.join(app.config['UPLOAD_FOLDER'], "control_output.png")
+        control_image.save(control_image_path)
+
+        # Only pass output.png to dashboard.html
+        return render_template("dashboard.html", 
+                              result_image_url="static/output.png")
     else:
         return jsonify({"error": "Failed to generate image"}), 500
 
