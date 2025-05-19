@@ -1,3 +1,8 @@
+import os
+import sys
+# Add the parent directory of script.py to sys.path
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 import torch
 from models.networks import define_G
 from collections import OrderedDict
