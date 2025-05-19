@@ -126,13 +126,14 @@ def infer():
         seed = random.randint(0, MAX_SEED)
 
     cond_in = files.get("controlImage")
-    image_in = files.get("referenceImage")
+    # image_in = files.get("referenceImage")
 
     if cond_in:
         control_image = resize_img(Image.open(cond_in))
-    elif image_in:
-        image_in = resize_img(Image.open(image_in))
-        control_image = extract_canny(image_in)
+        control_image = extract_canny(control_image) # added this cuz im only passing a reference img   
+    # elif image_in:
+    #     image_in = resize_img(Image.open(image_in))
+    #     control_image = extract_canny(image_in)
     else:
         return jsonify({"error": "No input image provided"}), 400
 
