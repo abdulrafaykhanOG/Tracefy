@@ -33,7 +33,7 @@ sys.path.append(base_dir)
 model_path = os.path.join(base_dir, 'model', 'pytorch_CycleGAN_and_pix2pix', 'pytorch_CycleGAN_and_pix2pix')
 sys.path.append(model_path)
 
-from model.pytorch_CycleGAN_and_pix2pix.pytorch_CycleGAN_and_pix2pixx.script import img_to_sketch
+from model.pytorch_CycleGAN_and_pix2pix.pixx.script import img_to_sketch
 
 # from mysqldb import mysql
 
