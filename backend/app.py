@@ -53,7 +53,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
 
-REMOTE_BACKEND_URL = "https://0754-35-237-61-68.ngrok-free.app/generate"
+REMOTE_BACKEND_URL = "https://470e-219-122-229-5.ngrok-free.app/infer"
 
 
 
@@ -98,6 +98,10 @@ def save_prompt():
     if model_type == 'pix2pix + flux':
         # Use pix2pix model to generate a sketch
         sketch = img_to_sketch(image_pil)
+
+        # result_image_path = os.path.join(app.config['UPLOAD_FOLDER'], "output.png")
+        # sketch.save(result_image_path)
+        
         buffer = BytesIO()
         sketch.save(buffer, format='PNG')
         buffer.seek(0)
