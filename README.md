@@ -4,19 +4,17 @@
 
 ---
 
-## Demo Video
-
-https://github.com/user-attachments/assets/135e0008-9b91-470f-ba7c-ac142a291200
-
-
----
-
 ## Project Overview
 
 Tracefy bridges the gap between victim/witness memory and actionable visual evidence using a multi-stage AI pipeline involving sketch refinement and text-guided image generation.
 
 **Input:** User-drawn outline sketch + natural language description  
 **Output:** High-resolution photorealistic facial image
+---
+
+## Demo Video
+
+https://github.com/user-attachments/assets/135e0008-9b91-470f-ba7c-ac142a291200
 
 ---
 
@@ -118,19 +116,9 @@ Tracefy is a **B2G (Business-to-Government)** solution. Target sectors include:
 
 ---
 
-## Contributors
-
-- **Mahad Mohtashim**  
-- **Mehar Ali Ahmed**  
-- **Abdul Rafay Khan**
-  
-Supervised by **Dr. Rafia Mumtaz** and **Dr. Muhammad Daud Abdullah Asif**
-
----
-
 ## Project Poster
 
----![Poster](https://github.com/user-attachments/assets/d0a2fb86-ee27-46ed-9685-ab83ed78cb43)
+![Poster](https://github.com/user-attachments/assets/d0a2fb86-ee27-46ed-9685-ab83ed78cb43)
 
 ## License
 
