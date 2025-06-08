@@ -1,106 +1,143 @@
-Tracefy
-Tracefy is an advanced AI-powered system that transforms rough criminal sketches and descriptive text prompts into realistic facial images. Built for forensic and law enforcement use, Tracefy leverages cutting-edge generative models to modernize suspect identification and support efficient investigations.
+# Tracefy
 
-🎥 Demo Video
-Watch the full walkthrough on YouTube:
-📺 Tracefy Demonstration Video
-(Includes user interface, sketch upload, prompt iteration, and image generation pipeline)
+**Tracefy** is an advanced AI-powered system that transforms rough criminal sketches and descriptive text prompts into realistic facial images. Built for forensic and law enforcement applications, Tracefy leverages cutting-edge generative models to modernize suspect identification and accelerate investigations.
 
-🔍 Project Overview
-Tracefy bridges the gap between victim/witness memory and actionable visual evidence using a multi-stage pipeline involving sketch refinement and text-guided image generation. Users can upload an outline sketch and describe the suspect in natural language; the system then generates a photorealistic face image combining both inputs.
+---
 
-✨ Key Features
-Sketch-to-Image Translation: Converts user-drawn outlines into high-resolution images.
+## Demo Video
 
-Dual Conditioning: Merges sketch geometry with semantic guidance from text prompts.
+Watch the full walkthrough on YouTube:  
+**[Tracefy Demonstration Video](#)**  
+(*Includes UI demo, sketch upload, prompt iteration, and the image generation pipeline*)
 
-Real-Time Generation: Fast, web-based inference pipeline using GPU-accelerated models.
+---
 
-User Interface: Intuitive frontend built in React.js for secure, role-based interaction.
+## Project Overview
 
-Bias Mitigation: Actively monitors fairness and demographic balance in outputs.
+Tracefy bridges the gap between victim/witness memory and actionable visual evidence using a multi-stage AI pipeline involving sketch refinement and text-guided image generation.
 
-Law Enforcement Tools: Secure dashboard for managing investigations and retrieval.
+**Input:** User-drawn outline sketch + natural language description  
+**Output:** High-resolution photorealistic facial image
 
-🧠 Technical Architecture
-Pipeline Stages
-Sketch Refinement
-Refines rough line art using a CycleGAN-based model trained on unpaired sketches.
+---
 
-Image Generation
-Combines refined sketch + text using a FLUX.1-dev latent diffusion model and ControlNet-Union-Pro-2.0 for structure-aware generation.
+## Key Features
 
-Prompt Iteration
-Allows multiple refinements per session to perfect suspect likeness.
+- **Sketch-to-Image Translation**  
+  Converts rough outlines into high-resolution face images.
 
-Core Models
-CycleGAN – For sketch cleanup and style normalization.
+- **Dual Conditioning**  
+  Fuses geometry (sketch) with semantic cues (text) to guide image generation.
 
-FLUX.1-dev + ControlNet – For generating realistic face images with dual inputs.
+- **Real-Time Inference**  
+  GPU-accelerated pipeline for fast, web-based generation.
 
-LoRA Fine-Tuning – For efficient, domain-specific model adaptation.
+- **User Interface**  
+  React.js frontend with secure, role-based access (RBAC).
 
-🛠 Tech Stack
-Layer	Technology
-Frontend	React.js
-Backend	Flask (Python)
-ML Framework	PyTorch, TensorFlow
-Data Storage	MySQL, MongoDB
-Model Infra	Google Colab, Hugging Face
+- **Bias Mitigation**  
+  Built-in fairness monitoring to ensure demographic balance.
 
-📦 Functional Modules
-User Authentication (RBAC, secure sessions)
+- **Law Enforcement Tools**  
+  Secure dashboard to manage sketches, generation history, and retrievals.
 
-Sketch Upload + Prompt Input
+---
 
-Sketch Refinement Preview
+## Technical Architecture
 
-Face Generation
+### Pipeline Stages
 
-Image History + Download
+1. **Sketch Refinement**  
+   Uses a CycleGAN-based model for line cleanup and style normalization.
 
-Law Enforcement Dashboard
+2. **Image Generation**  
+   Integrates refined sketch and user prompt using:
+   - FLUX.1-dev (Latent Diffusion Model)
+   - ControlNet-Union-Pro-2.0 (structure-aware synthesis)
 
-📊 Evaluation Metrics
-Canny Edge Similarity – Measures structural accuracy.
+3. **Prompt Iteration**  
+   Interactive session flow for refining and improving generated faces.
 
-Perceptual Hash (pHash) – Assesses visual similarity.
+### Core Models
 
-Hamming Distance – Quantifies binary differences between image hashes.
+| Task               | Model                                  |
+|--------------------|-----------------------------------------|
+| Sketch Cleanup     | CycleGAN                                |
+| Image Generation   | FLUX.1-dev + ControlNet                 |
+| Fine-tuning        | LoRA (Low-Rank Adaptation)              |
 
-📈 Business Model
-Tracefy is a B2G (Business-to-Government) solution with potential use cases in:
+---
 
-Police departments and forensic units
+## Tech Stack
 
-Investigative journalism
+| Layer          | Technology                                 |
+|----------------|---------------------------------------------|
+| Frontend       | React.js                                    |
+| Backend        | Flask (Python)                              |
+| ML Framework   | PyTorch, TensorFlow                         |
+| Data Storage   | MySQL, MongoDB                              |
+| Model Infra    | Google Colab, Hugging Face                  |
 
-Security and surveillance tech firms
+---
 
-🚀 Future Roadmap
-📱 Mobile App Deployment
+## Functional Modules
 
-🌍 South Asian Facial Dataset Acquisition
+- User Authentication (RBAC)
+- Sketch Upload & Prompt Input
+- Sketch Refinement Preview
+- Face Generation & Iteration
+- Image History & Download
+- Law Enforcement Dashboard
 
-🤝 Institutional Collaborations
+---
 
-🔁 Integration with National Criminal Databases (e.g., NADRA)
+## Evaluation Metrics
 
-⚙️ Deployment & CI/CD
-Containerized with Docker for backend and frontend services
+| Metric                  | Purpose                             |
+|-------------------------|--------------------------------------|
+| Canny Edge Similarity   | Structural accuracy measurement      |
+| Perceptual Hash (pHash) | Visual resemblance scoring           |
+| Hamming Distance        | Quantifies binary differences in hashes |
 
-GitHub Actions used for automated testing and deployment
+---
 
-WebSockets for real-time progress updates during image generation
+## Business Model
 
-🤝 Contributors
-Mahad Mohtashim
+Tracefy is a **B2G (Business-to-Government)** solution. Target sectors include:
 
-Mehar Ali Ahmed
+- Police departments and forensic teams  
+- Investigative journalism units  
+- Security and surveillance technology providers
 
-Abdul Rafay Khan
-Supervised by Dr. Rafia Mumtaz & Dr. Muhammad Daud Abdullah Asif
+---
 
-📜 License
-Tracefy is developed for academic and public safety purposes. For licensing inquiries, please contact the authors.
+## Future Roadmap
 
+- Mobile App Deployment  
+- Acquisition of South Asian Facial Dataset  
+- Academic & Institutional Collaborations  
+- Integration with National Criminal Databases (e.g., NADRA)
+
+---
+
+## Deployment & CI/CD
+
+- Containerized backend and frontend using Docker  
+- GitHub Actions for automated testing and deployment  
+- WebSockets for real-time generation status updates  
+
+---
+
+## Contributors
+
+- **Mahad Mohtashim**  
+- **Mehar Ali Ahmed**  
+- **Abdul Rafay Khan**  
+Supervised by **Dr. Rafia Mumtaz** and **Dr. Muhammad Daud Abdullah Asif**
+
+---
+
+## License
+
+Tracefy is developed for academic and public safety purposes.  
+For licensing or usage inquiries, please contact the authors.
