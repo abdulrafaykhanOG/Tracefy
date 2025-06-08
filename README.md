@@ -10,6 +10,7 @@ Tracefy bridges the gap between victim/witness memory and actionable visual evid
 
 **Input:** User-drawn outline sketch + natural language description  
 **Output:** High-resolution photorealistic facial image
+
 ---
 
 ## Demo Video
