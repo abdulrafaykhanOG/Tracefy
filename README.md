@@ -5,7 +5,6 @@
 ---
 
 ## Demo Video
-
 Watch the full walkthrough on YouTube:  
 **[https://youtu.be/AiiNZvnQ2-U](#)**  
 (*Includes UI demo, sketch upload, prompt iteration, and the image generation pipeline*)
@@ -99,7 +98,8 @@ Tracefy bridges the gap between victim/witness memory and actionable visual evid
 | Perceptual Hash (pHash) | Visual resemblance scoring           |
 | Hamming Distance        | Quantifies binary differences in hashes |
 
----
+---![Poster](https://github.com/user-attachments/assets/d0a2fb86-ee27-46ed-9685-ab83ed78cb43)
+
 
 ## Business Model
 
@@ -116,15 +116,7 @@ Tracefy is a **B2G (Business-to-Government)** solution. Target sectors include:
 - Mobile App Deployment  
 - Acquisition of South Asian Facial Dataset  
 - Academic & Institutional Collaborations  
-- Integration with National Criminal Databases (e.g., NADRA)
-
----
-
-## Deployment & CI/CD
-
-- Containerized backend and frontend using Docker  
-- GitHub Actions for automated testing and deployment  
-- WebSockets for real-time generation status updates  
+- Integration with National Criminal Databases (e.g. NADRA)
 
 ---
 
@@ -132,12 +124,12 @@ Tracefy is a **B2G (Business-to-Government)** solution. Target sectors include:
 
 - **Mahad Mohtashim**  
 - **Mehar Ali Ahmed**  
-- **Abdul Rafay Khan**  
+- **Abdul Rafay Khan**
+  
 Supervised by **Dr. Rafia Mumtaz** and **Dr. Muhammad Daud Abdullah Asif**
 
 ---
 
 ## License
 
-Tracefy is developed for academic and public safety purposes.  
-For licensing or usage inquiries, please contact the authors.
+Tracefy is developed for academic and public safety purposes.  For licensing or usage inquiries, please contact the authors.
