@@ -5,9 +5,9 @@
 ---
 
 ## Demo Video
-Watch the full walkthrough on YouTube:  
-**[https://youtu.be/AiiNZvnQ2-U](#)**  
-(*Includes UI demo, sketch upload, prompt iteration, and the image generation pipeline*)
+
+https://github.com/user-attachments/assets/135e0008-9b91-470f-ba7c-ac142a291200
+
 
 ---
 
@@ -98,8 +98,6 @@ Tracefy bridges the gap between victim/witness memory and actionable visual evid
 | Perceptual Hash (pHash) | Visual resemblance scoring           |
 | Hamming Distance        | Quantifies binary differences in hashes |
 
----![Poster](https://github.com/user-attachments/assets/d0a2fb86-ee27-46ed-9685-ab83ed78cb43)
-
 
 ## Business Model
 
@@ -129,6 +127,10 @@ Tracefy is a **B2G (Business-to-Government)** solution. Target sectors include:
 Supervised by **Dr. Rafia Mumtaz** and **Dr. Muhammad Daud Abdullah Asif**
 
 ---
+
+## Project Poster
+
+---![Poster](https://github.com/user-attachments/assets/d0a2fb86-ee27-46ed-9685-ab83ed78cb43)
 
 ## License
 
