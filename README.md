@@ -7,7 +7,7 @@
 ## Demo Video
 
 Watch the full walkthrough on YouTube:  
-**[Tracefy Demonstration Video](#)**  
+**[https://youtu.be/AiiNZvnQ2-U](#)**  
 (*Includes UI demo, sketch upload, prompt iteration, and the image generation pipeline*)
 
 ---
